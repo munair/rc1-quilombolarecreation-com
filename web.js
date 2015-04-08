@@ -37,7 +37,6 @@ app.post('/inc_email.html', function(request, response) {
           + '\nmessage: ' + message
           + '\nvalidation: ' + validation 
           + '\n';
-  if (validation === "i am human") {
     var options = {
       host: 'api.postmarkapp.com',
       port: 80,
@@ -68,7 +67,6 @@ app.post('/inc_email.html', function(request, response) {
     req.end();
 
     response.redirect('/inc_formconfirmation.html');
-  }
 });
 
 var port = process.env.PORT || 8080;
