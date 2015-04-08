@@ -64,7 +64,7 @@ app.post('/inc_email.html', function(request, response) {
     });
 
     // write data to request body
-    req.write("{From: 'sender@example.com', To: 'receiver@example.com', Subject: 'Postmark test', HtmlBody: '<html><body><strong>Hello</strong> dear Postmark user.</body></html>'}");
+    req.write("{From: 'munair@quilombola.com', To: 'munair@gmail.com', Subject: 'Postmark test', HtmlBody: '<html><body><strong>Hello</strong> dear Postmark user.</body></html>'}");
     req.end();
 
     response.redirect('/inc_formconfirmation.html');
