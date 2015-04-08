@@ -37,7 +37,7 @@ app.post('/inc_email.html', function(request, response) {
           + '\nmessage: ' + message
           + '\nvalidation: ' + validation 
           + '\n';
-  if (validation === "capoeira") {
+  if (validation === "i am human") {
     var options = {
       host: 'api.postmarkapp.com',
       port: 80,
@@ -64,11 +64,11 @@ app.post('/inc_email.html', function(request, response) {
     });
 
     // write data to request body
-    req.write("{From: 'munair@quilombola.com', To: 'munair@gmail.com', Subject: 'Membership Application from www.quilombolarecreation.com', HtmlBody: out}");
+    req.write("{From: 'sender@example.com', To: 'receiver@example.com', Subject: 'Postmark test', HtmlBody: '<html><body><strong>Hello</strong> dear Postmark user.</body></html>'}");
     req.end();
 
+    response.redirect('/inc_formconfirmation.html');
   }
-  response.redirect('/inc_formconfirmation.html');
 });
 
 var port = process.env.PORT || 8080;
