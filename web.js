@@ -37,19 +37,19 @@ app.post('/inc_email.html', function(request, response) {
           + '\nmessage: ' + message
           + '\nvalidation: ' + validation 
           + '\n';
-  var options = {
-    host: 'api.postmarkapp.com',
-    port: 80,
-    path: '/email',
-    method: 'POST',
-    headers: { 
-      'accept': 'application/json',
-      'content-type': 'application/json',
-      'x-postmark-server-token': 'f2392957-2e91-4ace-9f07-a72da382dd4c'
-    }
-  };
-
   if (validation === "capoeira") {
+    var options = {
+      host: 'api.postmarkapp.com',
+      port: 80,
+      path: '/email',
+      method: 'POST',
+      headers: { 
+        'accept': 'application/json',
+        'content-type': 'application/json',
+        'x-postmark-server-token': 'f2392957-2e91-4ace-9f07-a72da382dd4c'
+      }
+    };
+
     var req = http.request(options, function(res) {
       console.log('STATUS: ' + res.statusCode);
       console.log('HEADERS: ' + JSON.stringify(res.headers));
